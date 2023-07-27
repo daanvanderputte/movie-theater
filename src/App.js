@@ -1,14 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieNowPlaying from "./components/MovieNowPlaying";
 import MovieReview from "./components/MovieReview";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <MovieNowPlaying />
-      {/* <MovieReview /> */}
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<MovieNowPlaying />} />
+          <Route path="/reviews/:movieId" element={<MovieReview />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
