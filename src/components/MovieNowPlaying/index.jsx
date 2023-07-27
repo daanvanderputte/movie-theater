@@ -30,7 +30,7 @@ const MovieNowPlaying = () => {
 
   return (
     <div>
-      <div>Movies</div>
+      <div className="title">Movies</div>
       <div className="movie-cards-container">
         {movieNowPlaying.map((movie) => (
           <div key={movie.id} className="movie-card">
