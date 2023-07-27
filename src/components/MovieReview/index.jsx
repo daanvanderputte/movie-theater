@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./index.css";
 
 const MovieReview = () => {
   const [movieReview, setMovieReview] = useState([]);
+  const { movieId } = useParams();
 
-  const url = `https://api.themoviedb.org/3/movie/346698/reviews?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
     const fetchMovieReview = async () => {
@@ -18,7 +20,7 @@ const MovieReview = () => {
     };
 
     fetchMovieReview();
-  }, []);
+  }, [movieId]);
 
   return (
     <div className="review-container">
