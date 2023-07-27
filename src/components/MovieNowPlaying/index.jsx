@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 const MovieNowPlaying = () => {
   const [movieNowPlaying, setMovieNowPlaying] = useState([]);
+  const navigate = useNavigate();
 
   const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`;
 
@@ -28,12 +30,16 @@ const MovieNowPlaying = () => {
     return `${day}/${month}/${year}`;
   };
 
+  const handleMovieCardClick = (movieId) => {
+    navigate(`/reviews/${movieId}`);
+  };
+
   return (
     <div>
       <div className="title">Movies</div>
       <div className="movie-cards-container">
         {movieNowPlaying.map((movie) => (
-          <div key={movie.id} className="movie-card">
+          <div key={movie.id} className="movie-card" onClick={() => handleMovieCardClick(movie.id)}>
             <div className="movie-image">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
