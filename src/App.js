@@ -5,8 +5,8 @@ import MovieReview from "./components/MovieReview";
 function App() {
   return (
     <div className="App">
-      {/* <MovieNowPlaying /> */}
-      <MovieReview />
+      <MovieNowPlaying />
+      {/* <MovieReview /> */}
     </div>
   );
 }
