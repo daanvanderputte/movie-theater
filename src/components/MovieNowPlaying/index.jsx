@@ -51,7 +51,7 @@ const MovieNowPlaying = () => {
   }, [movieBookmark]);
 
   return (
-    <div>
+    <div className="main-container">
       <div className="title">Movies</div>
       <div className="movie-cards-container">
         {movieNowPlaying.map((movie) => (
@@ -60,13 +60,13 @@ const MovieNowPlaying = () => {
             className="movie-card"
             onClick={() => handleMovieCardClick(movie.id)}
           >
+            <div className="movie-title">{movie.title}</div>
             <div className="movie-image">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
               />
             </div>
-            <div className="movie-title">{movie.title}</div>
             <button
               onClick={(e) => {
                 e.stopPropagation();
