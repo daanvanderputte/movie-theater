@@ -24,6 +24,13 @@ const MovieNowPlaying = () => {
     fetchMovieNowPlaying();
   }, []);
 
+  useEffect(() => {
+    const savedMovieBookmark = localStorage.getItem("movieBookmark");
+    if (savedMovieBookmark) {
+      setMovieBookmark(JSON.parse(savedMovieBookmark));
+    }
+  }, []);
+
   const formatedDate = (dateString) => {
     const date = new Date(dateString);
     const day = date.getDate();
