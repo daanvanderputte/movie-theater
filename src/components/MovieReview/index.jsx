@@ -23,7 +23,7 @@ const MovieReview = () => {
 
     const fetchMovieReview = async () => {
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(reviewUrl);
         setMovieReview(response.data.results);
       } catch (error) {
         console.error("Error fetching movie reviews:", error);
