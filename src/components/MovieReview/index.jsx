@@ -11,6 +11,14 @@ const MovieReview = () => {
   const detailUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`;
   const reviewUrl = `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${process.env.REACT_APP_API_KEY}`;
 
+  const formatedDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
   useEffect(() => {
     const fetchMovieDetail = async () => {
       try {
@@ -42,7 +50,9 @@ const MovieReview = () => {
           alt={movieDetail.title}
         />
         <div>{movieDetail.title}</div>
-        <div>Release Date: {movieDetail.release_date}</div>
+        <div className="movie-release-date">
+          {formatedDate(movieDetail.release_date)}
+        </div>
         <div>{movieDetail.overview}</div>
       </div>
       <div className="reviews">

@@ -9,14 +9,6 @@ const MovieBookmark = ({
     return movieNowPlaying.find((movie) => movie.id === movieId);
   };
 
-  // const formatedDate = (dateString) => {
-  //   const date = new Date(dateString);
-  //   const day = date.getDate();
-  //   const month = date.getMonth() + 1;
-  //   const year = date.getFullYear();
-  //   return `${day}/${month}/${year}`;
-  // };
-
   return (
     <div>
       <div className="title">Bookmarked Movies</div>
@@ -37,10 +29,6 @@ const MovieBookmark = ({
                   />
                 </div>
                 <div className="movie-title">{movie.title}</div>
-                {/* <div className="movie-release-date">
-                  {formatedDate(movie.release_date)}
-                </div>
-                <div className="movie-overview">{movie.overview}</div> */}
               </div>
             );
           } else {

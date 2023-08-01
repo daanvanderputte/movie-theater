@@ -34,23 +34,13 @@ const MovieNowPlaying = () => {
   const toggleBookmark = (movieId) => {
     const isBookmarked = movieBookmark.includes(movieId);
     if (isBookmarked) {
-      const updatedMovieBookmark = movieBookmark.filter(
-        (id) => id !== movieId
-      );
+      const updatedMovieBookmark = movieBookmark.filter((id) => id !== movieId);
       setMovieBookmark(updatedMovieBookmark);
     } else {
       const updatedMovieBookmark = [...movieBookmark, movieId];
       setMovieBookmark(updatedMovieBookmark);
     }
   };
-
-  // const formatedDate = (dateString) => {
-  //   const date = new Date(dateString);
-  //   const day = date.getDate();
-  //   const month = date.getMonth() + 1;
-  //   const year = date.getFullYear();
-  //   return `${day}/${month}/${year}`;
-  // };
 
   const handleMovieCardClick = (movieId) => {
     navigate(`/reviews/${movieId}`);
@@ -77,10 +67,6 @@ const MovieNowPlaying = () => {
               />
             </div>
             <div className="movie-title">{movie.title}</div>
-            {/* <div className="movie-release-date">
-              {formatedDate(movie.release_date)}
-            </div>
-            <div className="movie-overview">{movie.overview}</div> */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
