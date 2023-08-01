@@ -44,13 +44,13 @@ const MovieNowPlaying = () => {
     }
   };
 
-  const formatedDate = (dateString) => {
-    const date = new Date(dateString);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  };
+  // const formatedDate = (dateString) => {
+  //   const date = new Date(dateString);
+  //   const day = date.getDate();
+  //   const month = date.getMonth() + 1;
+  //   const year = date.getFullYear();
+  //   return `${day}/${month}/${year}`;
+  // };
 
   const handleMovieCardClick = (movieId) => {
     navigate(`/reviews/${movieId}`);
@@ -77,10 +77,10 @@ const MovieNowPlaying = () => {
               />
             </div>
             <div className="movie-title">{movie.title}</div>
-            <div className="movie-release-date">
+            {/* <div className="movie-release-date">
               {formatedDate(movie.release_date)}
             </div>
-            <div className="movie-overview">{movie.overview}</div>
+            <div className="movie-overview">{movie.overview}</div> */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
