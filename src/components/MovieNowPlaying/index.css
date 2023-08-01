@@ -27,7 +27,15 @@
   font-weight: bold;
 }
 
+.movie-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 img {
   width: 90%;
   margin: 15px;
+  border: 2px solid black;
+  border-radius: 3px;
 }
