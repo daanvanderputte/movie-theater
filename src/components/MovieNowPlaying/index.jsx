@@ -31,6 +31,19 @@ const MovieNowPlaying = () => {
     }
   }, []);
 
+  const toggleBookmark = (movieId) => {
+    const isBookmarked = movieBookmark.includes(movieId);
+    if (isBookmarked) {
+      const updatedMovieBookmark = movieBookmark.filter(
+        (id) => id !== movieId
+      );
+      setMovieBookmark(updatedMovieBookmark);
+    } else {
+      const updatedMovieBookmark = [...movieBookmark, movieId];
+      setMovieBookmark(updatedMovieBookmark);
+    }
+  };
+
   const formatedDate = (dateString) => {
     const date = new Date(dateString);
     const day = date.getDate();
@@ -42,6 +55,10 @@ const MovieNowPlaying = () => {
   const handleMovieCardClick = (movieId) => {
     navigate(`/reviews/${movieId}`);
   };
+
+  useEffect(() => {
+    localStorage.setItem("movieBookmark", JSON.stringify(movieBookmark));
+  }, [movieBookmark]);
 
   return (
     <div>
