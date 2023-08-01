@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
+import MovieBookmark from "../MovieBookmark";
 
 const MovieNowPlaying = () => {
   const [movieNowPlaying, setMovieNowPlaying] = useState([]);
+  const [movieBookmark, setMovieBookmark] = useState([]);
   const navigate = useNavigate();
 
   const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`;
