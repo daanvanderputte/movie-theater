@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 
+.title {
+  font-family: "Limelight";
+  font-size: 6em ;
+  display: flex;
+  justify-content: center;
+  }
+
 .movie-cards-container {
   display: flex;
   flex-wrap: wrap;
