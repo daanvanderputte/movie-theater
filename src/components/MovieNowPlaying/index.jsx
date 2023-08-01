@@ -68,14 +68,14 @@ const MovieNowPlaying = () => {
               />
             </div>
             <div className="bookmark-button">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleBookmark(movie.id);
-              }}
-            >
-              {movieBookmark.includes(movie.id) ? "Unbookmark" : "Bookmark"}
-            </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleBookmark(movie.id);
+                }}
+              >
+                {movieBookmark.includes(movie.id) ? "Unbookmark" : "Bookmark"}
+              </button>
             </div>
           </div>
         ))}

@@ -43,17 +43,19 @@ const MovieReview = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className="main-container">
       <div className="movie-details">
         <img
           src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
           alt={movieDetail.title}
         />
+        <div className="movie-info">
         <div>{movieDetail.title}</div>
         <div className="movie-release-date">
           {formatedDate(movieDetail.release_date)}
         </div>
         <div>{movieDetail.overview}</div>
+        </div>
       </div>
       <div className="reviews">
         {movieReview.map((review) => (

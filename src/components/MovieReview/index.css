@@ -1,6 +1,17 @@
+.main-container {
+    background-color: #fcc500;
+}
+
+.movie-details {
+    display: flex;
+}
+
+.movie-info {
+    width: 40%;
+}
+
 .review-card {
     border: 3px solid black;
     width: 80%;
     margin: 5px
-    
 }
