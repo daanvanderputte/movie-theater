@@ -39,3 +39,15 @@ img {
   border: 2px solid black;
   border-radius: 3px;
 }
+
+.bookmark-button {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: none;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px;
+}
