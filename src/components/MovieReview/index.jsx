@@ -30,18 +30,30 @@ const MovieReview = () => {
       }
     };
 
+    fetchMovieDetail();
     fetchMovieReview();
   }, [movieId]);
 
   return (
-    <div className="review-container">
-      {movieReview.map((review) => (
-        <div key={review.id} className="review-card">
-          <div>Author: {review.author}</div>
-          <div>Rating: {review.author_details.rating}</div>
-          <div>Content: {review.content}</div>
-        </div>
-      ))}
+    <div>
+      <div className="movie-details">
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
+          alt={movieDetail.title}
+        />
+        <div>{movieDetail.title}</div>
+        <div>Release Date: {movieDetail.release_date}</div>
+        <div>{movieDetail.overview}</div>
+      </div>
+      <div className="reviews">
+        {movieReview.map((review) => (
+          <div key={review.id} className="review-card">
+            <div>Author: {review.author}</div>
+            <div>Rating: {review.author_details.rating}</div>
+            <div>Content: {review.content}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
