@@ -87,7 +87,7 @@ const MovieNowPlaying = () => {
                 toggleBookmark(movie.id);
               }}
             >
-              {bookmarkedMovies.includes(movie.id) ? "Unbookmark" : "Bookmark"}
+              {movieBookmark.includes(movie.id) ? "Unbookmark" : "Bookmark"}
             </button>
           </div>
         ))}
