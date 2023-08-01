@@ -65,7 +65,11 @@ const MovieNowPlaying = () => {
       <div className="title">Movies</div>
       <div className="movie-cards-container">
         {movieNowPlaying.map((movie) => (
-          <div key={movie.id} className="movie-card" onClick={() => handleMovieCardClick(movie.id)}>
+          <div
+            key={movie.id}
+            className="movie-card"
+            onClick={() => handleMovieCardClick(movie.id)}
+          >
             <div className="movie-image">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -77,9 +81,22 @@ const MovieNowPlaying = () => {
               {formatedDate(movie.release_date)}
             </div>
             <div className="movie-overview">{movie.overview}</div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleBookmark(movie.id);
+              }}
+            >
+              {bookmarkedMovies.includes(movie.id) ? "Unbookmark" : "Bookmark"}
+            </button>
           </div>
         ))}
       </div>
+      <MovieBookmark
+        movieBookmark={movieBookmark}
+        movieNowPlaying={movieNowPlaying}
+        handleMovieCardClick={handleMovieCardClick}
+      />
     </div>
   );
 };
