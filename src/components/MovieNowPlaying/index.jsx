@@ -67,6 +67,7 @@ const MovieNowPlaying = () => {
                 alt={movie.title}
               />
             </div>
+            <div className="bookmark-button">
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -75,6 +76,7 @@ const MovieNowPlaying = () => {
             >
               {movieBookmark.includes(movie.id) ? "Unbookmark" : "Bookmark"}
             </button>
+            </div>
           </div>
         ))}
       </div>
