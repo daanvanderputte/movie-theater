@@ -10,12 +10,16 @@
     margin: 20px;
 }
 
-.reviews {
-    border: 3px solid black;
+.info-title {
+    font-weight: bold;
 }
 
 .review-card {
-    border: 3px solid black;
-    width: 80%;
-    margin: 5px
+    width: 60%;
+    margin: 15px;
+}
+
+.rating {
+    margin-top: 6px;
+    margin-bottom: 6px;
 }

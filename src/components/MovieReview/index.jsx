@@ -50,7 +50,7 @@ const MovieReview = () => {
           alt={movieDetail.title}
         />
         <div className="movie-info">
-        <div>{movieDetail.title}</div>
+        <div className="info-title">{movieDetail.title}</div>
         <div className="movie-release-date">Release Date: {formatedDate(movieDetail.release_date)}
         </div>
         <div>{movieDetail.overview}</div>
@@ -59,9 +59,10 @@ const MovieReview = () => {
       <div className="reviews">
         {movieReview.map((review) => (
           <div key={review.id} className="review-card">
+            <div>{review.content}</div>
+            <div className="rating">Rating: {review.author_details.rating}</div>
             <div>Author: {review.author}</div>
-            <div>Rating: {review.author_details.rating}</div>
-            <div>Content: {review.content}</div>
+            
           </div>
         ))}
       </div>
