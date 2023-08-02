@@ -51,8 +51,7 @@ const MovieReview = () => {
         />
         <div className="movie-info">
         <div>{movieDetail.title}</div>
-        <div className="movie-release-date">
-          {formatedDate(movieDetail.release_date)}
+        <div className="movie-release-date">Release Date: {formatedDate(movieDetail.release_date)}
         </div>
         <div>{movieDetail.overview}</div>
         </div>
